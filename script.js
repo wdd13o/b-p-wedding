@@ -31,10 +31,12 @@ function updateCountdown() {
     secondsEl.textContent = seconds;
 }
 
-if (document.getElementById('months')) {
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('months')) {
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
+});
 
 // Envelope Seal Click
 const seal = document.getElementById('seal');
