@@ -18,22 +18,44 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
-header h1 {
+header .title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+header .title-line {
+    display: flex;
+    justify-content: center;
+}
+
+header .script {
     font-family: 'Great Vibes', cursive;
     font-size: 3.5rem;
-    margin: 0;
+    line-height: 1;
     color: #b88a4a;
 }
+
+header .full-name {
+    white-space: nowrap;
+}
+
+.index-page header .script,
+.index-page header .full-name {
+    font-size: 2.6rem;
+}
+
+.index-page header .amp {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
 header .amp {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     color: #b88a4a;
-}
-header .subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    color: #a67c52;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 header .date {
     font-size: 1.2rem;
@@ -69,10 +91,26 @@ header .date {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    z-index: 2;
+}
+.souvenir-photo {
+    position: absolute;
+    bottom: -15px;
+    left: -28px;
+    width: 320px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.96);
+    box-shadow: 0 26px 56px rgba(0,0,0,0.30);
+    opacity: 0.96;
+    z-index: -1;
 }
 .seal {
     width: 70px;
     height: 70px;
+    z-index: 2;
     background: linear-gradient(145deg, #b30000 60%, #e74c3c 100%);
     border-radius: 50%;
     color: #fff;
