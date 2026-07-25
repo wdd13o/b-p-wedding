@@ -11,7 +11,7 @@ function updateCountdown() {
         return;
     }
 
-    const eventDate = new Date('2026-12-26T00:00:00');
+    const eventDate = new Date('2026-09-5T00:00:00');
     const now = new Date();
     let diff = eventDate - now;
     if (diff < 0) diff = 0;
