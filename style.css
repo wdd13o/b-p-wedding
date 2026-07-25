@@ -974,19 +974,19 @@ header .date {
     .invitation-page {
         padding: 12px;
     }
-    .envelope-section {
+    .invitation-page .envelope-section {
         flex-direction: column;
         align-items: center;
     }
-    .bride-groom {
+    .invitation-page .bride-groom {
         width: 80px;
         height: 140px;
     }
-    .envelope {
+    .invitation-page .envelope {
         width: 220px;
         height: 120px;
     }
-    .seal {
+    .invitation-page .seal {
         width: 50px;
         height: 50px;
         font-size: 1rem;
