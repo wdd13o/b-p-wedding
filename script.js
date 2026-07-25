@@ -11,9 +11,23 @@ function updateCountdown() {
         return;
     }
 
-    const eventDate = new Date('2026-09-5T00:00:00');
+    // Use numeric Date constructor to avoid parsing differences across browsers
+    const eventDate = new Date(2026, 8, 5, 0, 0, 0); // September 5, 2026 (month is 0-based)
+    if (isNaN(eventDate.getTime())) return;
     const now = new Date();
     let diff = eventDate - now;
+    // Debugging output for deployed environments
+    console.debug('countdown: eventDate=', eventDate, 'now=', now, 'diff=', diff);
+    if (isNaN(diff)) {
+        // Avoid writing NaN into the UI; show placeholders and bail
+        monthsEl.textContent = '--';
+        weeksEl.textContent = '--';
+        daysEl.textContent = '--';
+        hoursEl.textContent = '--';
+        minutesEl.textContent = '--';
+        secondsEl.textContent = '--';
+        return;
+    }
     if (diff < 0) diff = 0;
 
     const seconds = Math.floor((diff / 1000) % 60);
@@ -31,10 +45,12 @@ function updateCountdown() {
     secondsEl.textContent = seconds;
 }
 
-if (document.getElementById('months')) {
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('months')) {
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
+});
 
 // Envelope Seal Click
 const seal = document.getElementById('seal');
