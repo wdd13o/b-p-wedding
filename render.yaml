@@ -3,4 +3,4 @@ services:
     name: b-p-wedding
     env: static
     branch: main
-    publishPath: /
+    publishPath: .
