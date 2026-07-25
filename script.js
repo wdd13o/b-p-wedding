@@ -11,7 +11,7 @@ function updateCountdown() {
         return;
     }
 
-    const eventDate = new Date('2026-09-05T00:00:00');
+    const eventDate = new Date('2026-09-5T00:00:00');
     const now = new Date();
     let diff = eventDate - now;
     if (diff < 0) diff = 0;
@@ -31,12 +31,10 @@ function updateCountdown() {
     secondsEl.textContent = seconds;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('months')) {
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
-});
+if (document.getElementById('months')) {
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+}
 
 // Envelope Seal Click
 const seal = document.getElementById('seal');
