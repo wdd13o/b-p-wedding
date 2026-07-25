@@ -132,8 +132,29 @@ header .date {
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
-    margin-top: 18px;
+    margin: 18px auto 18px;
     color: #2d1c0c;
+    background: rgba(255, 248, 236, 0.95);
+    display: block;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(180, 140, 90, 0.25);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    text-decoration: none;
+}
+.rsvp-prompt {
+    text-align: center;
+    font-size: 0.95rem;
+    margin: 10px auto 8px;
+    max-width: 92%;
+    line-height: 1.5;
+    color: #2f1f0f;
+    background: rgba(255, 248, 236, 0.95);
+    padding: 12px 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(180, 140, 90, 0.25);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 .envelop-label {
     text-align: center;
