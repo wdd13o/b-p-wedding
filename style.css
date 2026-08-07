@@ -34,7 +34,7 @@ header .script {
     font-family: 'Great Vibes', cursive;
     font-size: 3.5rem;
     line-height: 1;
-    color: #b88a4a;
+    color: #2e6d4e;
 }
 
 header .full-name {
@@ -54,14 +54,14 @@ header .full-name {
 header .amp {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
-    color: #b88a4a;
+    color: #2e6d4e;
     margin: 0;
 }
 header .date {
     font-size: 1.2rem;
     letter-spacing: 0.2em;
     margin-top: 0.5rem;
-    color: #b88a4a;
+    color: #2e6d4e;
 }
 .envelope-section {
     display: flex;
@@ -139,7 +139,7 @@ header .date {
     width: fit-content;
     padding: 8px 12px;
     border-radius: 14px;
-    border: 1px solid rgba(180, 140, 90, 0.25);
+    border: 1px solid rgba(46, 109, 78, 0.15);
     box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     text-decoration: none;
 }
@@ -153,7 +153,7 @@ header .date {
     background: rgba(255, 248, 236, 0.95);
     padding: 12px 14px;
     border-radius: 18px;
-    border: 1px solid rgba(180, 140, 90, 0.25);
+    border: 1px solid rgba(46, 109, 78, 0.15);
     box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 .envelop-label {
@@ -219,7 +219,7 @@ header .date {
 .nav-brand {
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
-    color: #8B4513;
+    color: #2e6d4e;
     white-space: nowrap;
 }
 
@@ -242,8 +242,8 @@ header .date {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-    background: rgba(139,111,71,0.14);
-    color: #8B4513;
+    background: rgba(46,109,78,0.14);
+    color: #2e6d4e;
     transform: translateY(-1px);
 }
 
@@ -267,10 +267,10 @@ header .date {
     width: 100%;
     max-width: 100%;
     background: 
-        linear-gradient(135deg, rgb(250, 250, 250), rgba(186, 139, 74, 0.3)),
+        linear-gradient(135deg, rgb(250, 250, 250), rgba(46, 109, 78, 0.25)),
         url('background7.jpg') center/cover;
     backdrop-filter: blur(6px);
-    border: 3px solid #8B6F47;
+    border: 3px solid #1f4d38;
     box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);
     padding: 38px 28px;
     text-align: center;
@@ -313,7 +313,7 @@ header .date {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #8B4513;
+    color: #2e6d4e;
     margin-bottom: 18px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -322,7 +322,7 @@ header .date {
 .entourage-title {
     font-family: 'Great Vibes', cursive;
     font-size: 2rem;
-    color: #8B4513;
+    color: #2e6d4e;
     margin-bottom: 18px;
 }
 
@@ -342,7 +342,7 @@ header .date {
 .role-title {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #a67c52;
+    color: #2e6d4e;
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -372,21 +372,18 @@ header .date {
 }
 
 .usherette-section {
-    text-align: center;
-    margin: 10px auto 10px;
+    text-align: left;
+    margin: 10px 0;
 }
 
 .usherette-section .role-list {
-    display: inline-block;
+    display: block;
+    list-style: none;
     text-align: left;
-    margin: 0 auto;
-    padding-left: 1rem;
+    margin: 0;
+    padding-left: 0;
     line-height: 1.4;
     min-width: 0;
-}
-
-.usherette-section .role-list li {
-    margin: 2px 0;
 }
 
 .role-list li {
@@ -394,6 +391,15 @@ header .date {
     overflow: hidden;
     display: inline-block;
     max-width: 100%;
+}
+
+.usherette-section .role-list li {
+    display: list-item;
+    list-style: none;
+    margin: 2px 0;
+    white-space: normal;
+    overflow: visible;
+    word-break: normal;
 }
 
 .invitation-names {
@@ -410,7 +416,7 @@ header .date {
 .amp-large {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    color: #8B4513;
+    color: #2e6d4e;
     margin: 12px 0;
 }
 
@@ -436,7 +442,7 @@ header .date {
 .section-title {
     font-family: 'Great Vibes', cursive;
     font-size: 1.9rem;
-    color: #8B4513;
+    color: #2e6d4e;
     margin: 18px 0 10px;
 }
 
@@ -469,7 +475,7 @@ header .date {
 .wedding-ceremony {
     font-family: 'Great Vibes', cursive;
     font-size: 2.2rem;
-    color: #8B4513;
+    color: #2e6d4e;
     margin: 20px 0;
 }
 
@@ -487,7 +493,7 @@ header .date {
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.12em;
-    color: #8B4513;
+    color: #2e6d4e;
 }
 
 .event-location {
@@ -496,6 +502,32 @@ header .date {
     color: #6d4c2f;
     font-weight: 600;
     line-height: 1.4;
+}
+
+.location-underline {
+    width: 90%;
+    max-width: 320px;
+    height: 1px;
+    margin: 8px auto 16px;
+    border: none;
+    background: #2e6d4e;
+    opacity: 0.75;
+}
+
+#reception .event-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+}
+
+#reception .event-location {
+    font-size: 0.72rem;
+    line-height: 1.15;
+    margin: 8px 0;
+}
+
+#reception .event-location p {
+    margin: 1px 0;
 }
 
 .event-location p {
@@ -509,9 +541,9 @@ header .date {
     margin: 20px 0;
     background: linear-gradient(to right, 
         transparent 0%, 
-        #a67c52 20%, 
+        #2e6d4e 20%, 
         transparent 50%, 
-        #a67c52 80%, 
+        #2e6d4e 80%, 
         transparent 100%);
     position: relative;
 }
@@ -548,7 +580,7 @@ header .date {
 }
 
 .back-to-home a:hover {
-    color: #8B4513;
+    color: #2e6d4e;
 }
 
 .admin-container {
@@ -561,7 +593,7 @@ header .date {
 .admin-panel {
     width: 100%;
     background: rgba(255,255,255,0.96);
-    border: 1px solid rgba(139,111,71,0.18);
+    border: 1px solid rgba(46, 109, 78, 0.16);
     border-radius: 26px;
     box-shadow: 0 18px 45px rgba(0,0,0,0.08);
     padding: 32px;
@@ -571,7 +603,7 @@ header .date {
     font-family: 'Great Vibes', cursive;
     font-size: 2.6rem;
     margin-bottom: 8px;
-    color: #8B4513;
+    color: #2e6d4e;
 }
 
 .admin-panel p {
@@ -606,7 +638,7 @@ header .date {
 }
 
 .admin-actions button {
-    background: #8B4513;
+    background: #2e6d4e;
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -617,7 +649,7 @@ header .date {
 }
 
 .admin-actions button:hover {
-    background: #a46b36;
+    background: #1f4d38;
     transform: translateY(-1px);
 }
 
@@ -757,7 +789,7 @@ header .date {
 .rsvp-card {
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(139,111,71,0.18);
+    border: 1px solid rgba(46, 109, 78, 0.16);
     border-radius: 26px;
     box-shadow: 0 14px 32px rgba(0,0,0,0.08);
     padding: 26px;
@@ -767,7 +799,7 @@ header .date {
     font-family: 'Great Vibes', cursive;
     font-size: 2.4rem;
     margin-bottom: 10px;
-    color: #8B4513;
+    color: #2e6d4e;
 }
 
 .rsvp-card p {
@@ -827,8 +859,8 @@ header .date {
 .form-field input:focus,
 .form-field textarea:focus {
     outline: none;
-    border-color: #8B4513;
-    box-shadow: 0 0 0 4px rgba(139,111,71,0.12);
+    border-color: #2e6d4e;
+    box-shadow: 0 0 0 4px rgba(46, 109, 78, 0.12);
 }
 
 .radio-field .radio-group {
@@ -846,7 +878,7 @@ header .date {
 }
 
 .radio-group input {
-    accent-color: #8B4513;
+    accent-color: #2e6d4e;
 }
 
 .rsvp-button {
@@ -854,7 +886,7 @@ header .date {
     padding: 14px 32px;
     border: none;
     border-radius: 999px;
-    background: #8B4513;
+    background: #2e6d4e;
     color: #fff;
     cursor: pointer;
     font-weight: 700;
@@ -863,7 +895,7 @@ header .date {
 }
 
 .rsvp-button:hover {
-    background: #a46b36;
+    background: #1f4d38;
     transform: translateY(-1px);
 }
 
