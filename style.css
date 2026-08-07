@@ -258,7 +258,7 @@ header .date {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 14px;
     width: min(100%, 1400px);
     align-items: stretch;
 }
@@ -271,8 +271,8 @@ header .date {
         url('background7.jpg') center/cover;
     backdrop-filter: blur(6px);
     border: 3px solid #8B6F47;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
-    padding: 60px 45px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);
+    padding: 38px 28px;
     text-align: center;
     position: relative;
     box-sizing: border-box;
@@ -311,53 +311,89 @@ header .date {
 
 .save-the-date {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #8B4513;
-    margin-bottom: 30px;
-    letter-spacing: 0.35em;
+    margin-bottom: 18px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
 }
 
 .entourage-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: #8B4513;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .entourage-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 12px;
     text-align: left;
 }
 
 .entourage-column {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
 }
 
 .role-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: #a67c52;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
 }
 
 .role-list {
     margin: 0;
-    padding-left: 1.1rem;
+    padding-left: 1rem;
     color: #4b3827;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.35;
+    font-size: 0.9rem;
+    min-width: 0;
 }
 
 .role-list li {
-    margin: 3px 0;
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.entourage-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.usherette-section {
+    text-align: center;
+    margin: 10px auto 10px;
+}
+
+.usherette-section .role-list {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 1rem;
+    line-height: 1.4;
+    min-width: 0;
+}
+
+.usherette-section .role-list li {
+    margin: 2px 0;
+}
+
+.role-list li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .invitation-names {
@@ -386,80 +422,80 @@ header .date {
 }
 
 .invitation-text {
-    margin: 30px 0;
-    font-size: 0.95rem;
+    margin: 18px 0;
+    font-size: 0.9rem;
     color: #6d4c2f;
-    line-height: 1.8;
+    line-height: 1.4;
 }
 
 .invitation-text p {
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 .program-title,
 .section-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.3rem;
+    font-size: 1.9rem;
     color: #8B4513;
-    margin: 28px 0 15px;
+    margin: 18px 0 10px;
 }
 
 .program-list {
     margin: 0;
-    padding-left: 1.1rem;
+    padding-left: 1rem;
     text-align: left;
     color: #4b3827;
-    line-height: 1.8;
-    font-size: 0.95rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 .program-list li {
-    margin: 10px 0;
+    margin: 6px 0;
 }
 
 .color-list {
     margin: 0;
-    padding-left: 1.1rem;
+    padding-left: 1rem;
     text-align: left;
     color: #4b3827;
-    line-height: 1.8;
-    font-size: 0.95rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 .color-list li {
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 .wedding-ceremony {
     font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #8B4513;
-    margin: 35px 0;
+    margin: 20px 0;
 }
 
 .event-details {
-    margin: 28px 0;
-    font-size: 1rem;
+    margin: 16px 0;
+    font-size: 0.95rem;
     color: #6d4c2f;
 }
 
 .event-details p {
-    margin: 5px 0;
+    margin: 3px 0;
 }
 
 .event-date {
     font-weight: 600;
-    font-size: 1.15rem;
-    letter-spacing: 0.15em;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
     color: #8B4513;
 }
 
 .event-location {
-    margin: 28px 0;
-    font-size: 0.95rem;
+    margin: 16px 0;
+    font-size: 0.9rem;
     color: #6d4c2f;
     font-weight: 600;
-    line-height: 1.8;
+    line-height: 1.4;
 }
 
 .event-location p {
@@ -974,16 +1010,29 @@ header .date {
 
 @media (max-width: 520px) {
     .invitation-card {
-        padding: 32px 18px;
+        padding: 30px 16px;
     }
 
     .entourage-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
+    }
+
+    .role-title {
+        font-size: 0.95rem;
     }
 
     .role-list {
-        font-size: 0.9rem;
+        font-size: 0.82rem;
+        padding-left: 0.9rem;
+    }
+
+    .role-list li {
+        margin: 2px 0;
+    }
+
+    .usherette-section {
+        margin-top: 12px;
     }
 }
 
