@@ -23,6 +23,7 @@ body {
 }
 
 .envelope-wrapper {
+    position: relative;
     perspective: 1400px;
 }
 
@@ -430,49 +431,49 @@ body {
     opacity: 0;
     transition: all 0.9s ease;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.08);
-    padding: 24px 22px;
+    padding: 48px 22px 22px;
     overflow: hidden;
 }
 
 .open-souvenir-btn {
     display: none;
     position: absolute;
-    right: 16px;
-    top: 52%;
-    transform: translateY(-50%);
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
     align-items: center;
     justify-content: center;
-    padding: 0.72rem 1.1rem;
+    padding: 0.72rem 1.2rem;
     background: #f8fff4;
     color: #1f3f2f;
     font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;
     border: 1.5px solid #2e6d4e;
-    border-radius: 0.85rem;
+    border-radius: 1rem;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.08), 0 8px 18px rgba(0,0,0,0.12);
     transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-    min-width: 140px;
-    z-index: 2;
+    min-width: 160px;
+    z-index: 5;
     white-space: nowrap;
 }
 
-.envelope.open .open-souvenir-btn {
+.envelope.open ~ .open-souvenir-btn {
     display: inline-flex;
     animation: pulse-click 2.6s ease-in-out infinite;
 }
 
 @keyframes pulse-click {
     0%, 100% {
-        transform: translateY(-50%) scale(1);
+        transform: translateX(-50%) scale(1);
         box-shadow: 4px 4px 0 rgba(0,0,0,0.08), 0 8px 18px rgba(0,0,0,0.12);
     }
     40% {
-        transform: translateY(-50%) scale(1.03);
+        transform: translateX(-50%) scale(1.03);
         box-shadow: 6px 6px 0 rgba(0,0,0,0.08), 0 10px 22px rgba(0,0,0,0.14);
     }
     80% {
-        transform: translateY(-50%) scale(1);
+        transform: translateX(-50%) scale(1);
         box-shadow: 4px 4px 0 rgba(0,0,0,0.08), 0 8px 18px rgba(0,0,0,0.12);
     }
 }
