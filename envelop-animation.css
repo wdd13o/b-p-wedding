@@ -160,14 +160,6 @@ body {
 
 .seal:hover{ transform: translate(-50%, -50%) scale(1.03); }
 
-.seal::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border-radius: 50%;
-    border: 3px solid rgba(141, 100, 32, 0.9);
-}
-
 .envelope.open .seal {
     opacity: 0;
     transform: translateX(-50%) scale(0.8);
@@ -232,7 +224,7 @@ body {
 @media (max-width: 700px){
     .envelope{ width: 94vw; height: 58vw; border-radius: 12px; }
     .envelope::before{ opacity: 0.9 }
-    .seal{ width: 66px; height: 66px; }
+    .seal{ width: 66px; height: 66px; font-size: 1.08rem; border-width: 4px; font-weight: 800; letter-spacing: 0.02em; text-shadow: 0 1px 0 rgba(255,255,255,0.45); }
     .letter{ inset: 26px 14px 14px; padding: 14px 12px; }
     .card-subtitle{ font-size: 0.60rem; }
     .letter h1{ font-size: 1.25rem; }
@@ -257,7 +249,7 @@ body {
 
 @media (max-width: 520px){
     .envelope{ height: 54vw; }
-    .seal{ width: 60px; height: 60px; }
+    .seal{ width: 60px; height: 60px; font-size: 1.06rem; border-width: 3px; font-weight: 800; letter-spacing: 0.02em; text-shadow: 0 1px 0 rgba(255,255,255,0.45); }
     .letter{ inset: 22px 12px 12px; padding: 12px 10px; }
     .card-subtitle{ font-size: 0.56rem; }
     .letter h1{ font-size: 1.15rem; }
@@ -271,7 +263,7 @@ body {
 
 @media (max-width: 420px){
     .envelope{ border-radius: 10px; }
-    .seal{ width: 54px; height: 54px; font-size: 0.74rem; }
+    .seal{ width: 54px; height: 54px; font-size: 1.02rem; border-width: 3px; font-weight: 800; letter-spacing: 0.02em; text-shadow: 0 1px 0 rgba(255,255,255,0.45); }
     .letter{ inset: 20px 10px 10px; padding: 10px 9px; }
     .letter h1{ font-size: 1.0rem; }
     .card-subtitle{ font-size: 0.55rem; }
@@ -290,7 +282,7 @@ body {
 
 @media (max-width: 360px){
     .envelope{ width: 96vw; height: 60vw; }
-    .seal{ width: 50px; height: 50px; font-size: 0.7rem; }
+    .seal{ width: 50px; height: 50px; font-size: 1.02rem; border-width: 3px; font-weight: 800; letter-spacing: 0.02em; text-shadow: 0 1px 0 rgba(255,255,255,0.45); }
     .letter{ inset: 18px 8px 8px; padding: 8px 8px; }
     .card-subtitle{ font-size: 0.5rem; }
     .letter h1{ font-size: 0.92rem; }
@@ -322,6 +314,43 @@ body {
     background: linear-gradient(rgba(255, 250, 239, 0.88), rgba(255, 250, 239, 0.88)), url('background2.jpg') center center / cover no-repeat;
 }
 
+/* Vertical mobile layout triggered by tapping the seal on Android */
+.envelope.vertical {
+    width: 92vw;
+    height: auto;
+    max-width: 420px;
+    border-radius: 12px;
+    padding: 10px 0;
+    cursor: default;
+}
+.envelope.vertical .flap { display: none; }
+.envelope.vertical .seal {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 6px auto;
+    z-index: 4;
+    font-size: 1.05rem;
+    border-width: 4px;
+}
+.envelope.vertical .letter {
+    position: relative;
+    inset: auto;
+    transform: none;
+    opacity: 1;
+    margin: 8px 12px 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.envelope.vertical .invitation-card { width: 100%; }
+.envelope.vertical .timeline { padding-left: 12px; }
+.envelope.vertical .timeline-item { padding: 0 0 0 12px; gap: 6px; }
+.envelope.vertical .timeline-item::before { left: -16px; width: 18px; height: 18px; font-size: 0.68rem; }
+.envelope.vertical .letter h1 { font-size: 1.05rem; }
+.envelope.vertical .timeline-title { font-size: 0.86rem; }
+.envelope.vertical .timeline-meta { font-size: 0.70rem; line-height: 1.12; }
+
 .invitation-card {
     position: relative;
     width: 100%;
@@ -329,7 +358,7 @@ body {
 }
 
 .card-header {
-    margin-bottom: 18px;
+    margin-bottom: 0;
 }
 
 .card-subtitle {
@@ -339,7 +368,7 @@ body {
     font-size: 0.62rem;
     text-transform: uppercase;
     opacity: 0.85;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .letter h1 {
@@ -352,7 +381,7 @@ body {
 .timeline {
     position: relative;
     list-style: none;
-    padding-left: 28px;
+    padding-left: 18px;
     margin: 0;
     border-left: 2px solid rgba(179, 134, 47, 0.25);
 }
@@ -369,16 +398,16 @@ body {
 
 .timeline-item {
     position: relative;
-    padding: 4px 0 4px 26px;
+    padding: 0 0 0 18px;
     display: flex;
-    gap: 8px;
+    gap: 4px;
     align-items: flex-start;
 }
 
 .timeline-item::before {
     content: attr(data-icon);
     position: absolute;
-    left: -26px;
+    left: -18px;
     top: 8px;
     width: 22px;
     height: 22px;
@@ -406,14 +435,15 @@ body {
     font-size: 0.94rem;
     font-weight: 700;
     color: #2f2418;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
 .timeline-meta {
     font-size: 0.78rem;
     color: #6c5842;
-    line-height: 1.4;
+    line-height: 1.15;
     letter-spacing: 0.01em;
+    margin: 0;
 }
 
 .letter {
@@ -431,7 +461,7 @@ body {
     opacity: 0;
     transition: all 0.9s ease;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.08);
-    padding: 18px 18px;
+    padding: 12px 12px;
     overflow: hidden;
 }
 
@@ -461,6 +491,32 @@ body {
 .envelope.open ~ .open-souvenir-btn {
     display: inline-flex;
     animation: pulse-click 2.6s ease-in-out infinite;
+}
+
+/* Mobile hint that appears above the envelope on small screens */
+.mobile-hint {
+    display: none;
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 0.84rem;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 260ms ease, transform 260ms ease;
+    pointer-events: none;
+}
+.mobile-hint.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 700px){
+    .mobile-hint { display: block; }
 }
 
 @keyframes pulse-click {
