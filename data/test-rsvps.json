@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Jane Doe",
+    "phone": "555-1234",
+    "attendance": "attending",
+    "guests": "2",
+    "partyRole": "Guest",
+    "song": "Amazing Grace",
+    "talent": "",
+    "submittedAt": "2026-01-01T00:00:00.000Z"
+  }
+]
