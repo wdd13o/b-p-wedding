@@ -60,15 +60,18 @@ if (seal) {
     });
 }
 
+const RSVP_API_URL = '/api/rsvps';
+const RSVP_STORAGE_KEY = 'weddingRsvps';
+
 const rsvpForm = document.getElementById('rsvp-form');
 const rsvpMessage = document.getElementById('rsvp-message');
 if (rsvpForm) {
-    rsvpForm.addEventListener('submit', function(event) {
+    rsvpForm.addEventListener('submit', async function(event) {
         event.preventDefault();
 
         const formData = new FormData(rsvpForm);
-        const name = formData.get('name').trim();
-        const phone = formData.get('phone').trim();
+        const name = formData.get('name')?.trim();
+        const phone = formData.get('phone')?.trim();
         const attendance = formData.get('attendance');
         const partyRole = formData.get('partyRole');
         const talent = formData.get('talent');
@@ -79,10 +82,7 @@ if (rsvpForm) {
             return;
         }
 
-        rsvpMessage.textContent = 'Thank you! Your RSVP has been received.';
-        rsvpMessage.className = 'rsvp-message success';
-
-        saveRsvpEntry({
+        const entry = {
             name,
             phone,
             attendance,
@@ -91,15 +91,24 @@ if (rsvpForm) {
             song: formData.get('song') || '',
             talent: talent || '',
             submittedAt: new Date().toISOString()
-        });
+        };
 
-        rsvpForm.reset();
+        try {
+            await saveRsvpEntry(entry);
+            rsvpMessage.textContent = 'Thank you! Your RSVP has been received.';
+            rsvpMessage.className = 'rsvp-message success';
+            rsvpForm.reset();
+        } catch (error) {
+            console.error('Failed to save RSVP entry', error);
+            rsvpMessage.textContent = 'There was a problem saving your RSVP. Please try again.';
+            rsvpMessage.className = 'rsvp-message error';
+        }
     });
 }
 
-function getRsvpEntries() {
+function getLocalRsvpEntries() {
     try {
-        const stored = localStorage.getItem('weddingRsvps');
+        const stored = localStorage.getItem(RSVP_STORAGE_KEY);
         return stored ? JSON.parse(stored) : [];
     } catch (error) {
         console.error('Failed to parse RSVP entries', error);
@@ -107,14 +116,50 @@ function getRsvpEntries() {
     }
 }
 
-function saveRsvpEntry(entry) {
-    const entries = getRsvpEntries();
+function saveLocalRsvpEntry(entry) {
+    const entries = getLocalRsvpEntries();
     entries.push(entry);
-    localStorage.setItem('weddingRsvps', JSON.stringify(entries));
+    localStorage.setItem(RSVP_STORAGE_KEY, JSON.stringify(entries));
+}
+
+async function getRsvpEntries() {
+    try {
+        const response = await fetch(RSVP_API_URL, { headers: { Accept: 'application/json' } });
+        if (!response.ok) throw new Error(`Server responded with ${response.status}`);
+
+        const entries = await response.json();
+        return Array.isArray(entries) ? entries : [];
+    } catch (error) {
+        console.warn('RSVP API unavailable, falling back to browser storage.', error);
+        return getLocalRsvpEntries();
+    }
+}
+
+async function saveRsvpEntry(entry) {
+    try {
+        const response = await fetch(RSVP_API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify(entry)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server responded with ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.warn('Using local browser storage because the shared RSVP API is unavailable.', error);
+        saveLocalRsvpEntry(entry);
+        return entry;
+    }
 }
 
 function clearRsvpEntries() {
-    localStorage.removeItem('weddingRsvps');
+    localStorage.removeItem(RSVP_STORAGE_KEY);
 }
 
 function exportRsvpsToCsv(entries) {
@@ -179,12 +224,11 @@ function renderAdminTable(entries) {
     count.textContent = entries.length;
 }
 
-function setupAdminPage() {
+async function setupAdminPage() {
     const adminContent = document.getElementById('admin-content');
     const warning = document.getElementById('admin-warning');
     if (!adminContent || !warning) return;
 
-    // Basic secret URL check
     const allowedKey = 'admin123';
     const params = new URLSearchParams(window.location.search);
     const key = params.get('key') || window.location.hash.replace(/^#/, '');
@@ -198,7 +242,7 @@ function setupAdminPage() {
     warning.textContent = 'Admin access granted. Refresh if you submit new entries.';
     warning.className = 'admin-warning success';
 
-    const entries = sortEntries(getRsvpEntries(), 'submittedAt');
+    const entries = sortEntries(await getRsvpEntries(), 'submittedAt');
     renderAdminTable(entries);
 
     if (entries.length === 0) {
@@ -214,14 +258,15 @@ function setupAdminPage() {
     const affiliationSort = document.getElementById('affiliation-sort');
 
     if (refreshBtn) {
-        refreshBtn.addEventListener('click', () => {
-            renderAdminTable(sortEntries(getRsvpEntries(), 'submittedAt', 'desc'));
+        refreshBtn.addEventListener('click', async () => {
+            const entries = await getRsvpEntries();
+            renderAdminTable(sortEntries(entries, 'submittedAt', 'desc'));
         });
     }
 
     if (downloadBtn) {
-        downloadBtn.addEventListener('click', () => {
-            exportRsvpsToCsv(getRsvpEntries());
+        downloadBtn.addEventListener('click', async () => {
+            exportRsvpsToCsv(await getRsvpEntries());
         });
     }
 
@@ -232,9 +277,9 @@ function setupAdminPage() {
     }
 
     if (affiliationSort) {
-        affiliationSort.addEventListener('change', () => {
+        affiliationSort.addEventListener('change', async () => {
             const selected = affiliationSort.value;
-            const entries = getRsvpEntries();
+            const entries = await getRsvpEntries();
             if (!selected) {
                 renderAdminTable(sortEntries(entries, 'submittedAt', 'desc'));
                 return;
@@ -244,10 +289,10 @@ function setupAdminPage() {
     }
 
     document.querySelectorAll('.admin-table th').forEach(header => {
-        header.addEventListener('click', () => {
+        header.addEventListener('click', async () => {
             const key = header.getAttribute('data-key');
             if (!key) return;
-            renderAdminTable(sortEntries(getRsvpEntries(), key));
+            renderAdminTable(sortEntries(await getRsvpEntries(), key));
         });
     });
 }
@@ -255,3 +300,4 @@ function setupAdminPage() {
 if (window.location.pathname.endsWith('admin.html')) {
     document.addEventListener('DOMContentLoaded', setupAdminPage);
 }
+
