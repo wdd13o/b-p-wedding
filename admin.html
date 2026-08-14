@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Admin - Bundu & Princess</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="invitation-page">
+    <nav class="invitation-navbar">
+        <div class="nav-brand">Bundu & Princess</div>
+        <div class="nav-links">
+            <a href="invitation.html">Invitation</a>
+            <a href="rsvp.html">RSVP</a>
+        </div>
+    </nav>
+
+    <main class="invitation-container admin-container">
+        <section class="admin-panel">
+            <h2>RSVP Submissions</h2>
+            <p>Open this page with the secret key in the URL, for example:</p>
+            <p><code>admin.html?key=admin123</code> or <code>admin.html#admin123</code></p>
+            <div id="admin-warning" class="admin-warning"></div>
+
+            <div id="admin-content" class="admin-content">
+                <div class="admin-actions">
+                    <button id="refresh-entries" type="button">Refresh</button>
+                    <button id="download-csv" type="button">Download CSV</button>
+                    <button id="print-list" type="button">Export PDF / Print</button>
+                    <select id="affiliation-sort">
+                        <option value="">Sort by Affiliation</option>
+                        <option value="asc">Affiliation A → Z</option>
+                        <option value="desc">Affiliation Z → A</option>
+                    </select>
+                </div>
+                <div class="admin-help">Use Export PDF to open the browser print dialog, then choose Save as PDF.</div>
+
+                <div class="admin-summary">
+                    Total RSVPs: <span id="entry-count">0</span>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th data-key="submittedAt">Date</th>
+                                <th data-key="name">Name</th>
+                                <th data-key="phone">Phone</th>
+                                <th data-key="attendance">Attendance</th>
+                                <th data-key="guests">Guests</th>
+                                <th data-key="partyRole">Affiliation</th>
+                                <th data-key="song">Song Request</th>
+                                <th data-key="talent">Talent</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- back link removed per request -->
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1151 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: url('background.jpg') center top/cover no-repeat fixed;
+    color: #6d4c2f;
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 10px;
+    background: url('background.jpg') center top/cover no-repeat fixed;
+    background: url('background1.jpg') center/cover no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+header .title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+header .title-line {
+    display: flex;
+    justify-content: center;
+}
+
+header .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #2e6d4e;
+}
+
+header .full-name {
+    white-space: nowrap;
+}
+
+.index-page header .script,
+.index-page header .full-name {
+    font-size: 2.6rem;
+}
+
+.index-page header .amp {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+header .amp {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #2e6d4e;
+    margin: 0;
+}
+header .date {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    margin-top: 0.5rem;
+    color: #2e6d4e;
+}
+.envelope-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 30px 0 10px 0;
+}
+.bride-groom {
+    width: 120px;
+    height: 220px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+.bride-groom.left {
+    background-image: url('bride-left.png');
+}
+.bride-groom.right {
+    background-image: url('groom-right.png');
+}
+.envelope {
+    width: 320px;
+    height: 180px;
+        background: url('envelop.png') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 2;
+}
+.souvenir-photo {
+    position: absolute;
+    bottom: -15px;
+    left: -28px;
+    width: 320px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.96);
+    box-shadow: 0 26px 56px rgba(0,0,0,0.30);
+    opacity: 0.96;
+    z-index: -1;
+}
+.seal {
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+    background: linear-gradient(145deg, #2e6d4e 0%, #1f4d38 45%, #153b2b 100%);
+    border-radius: 50%;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    border: 4px solid #d8b46a;
+}
+.open-text {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 18px auto 18px;
+    color: #2d1c0c;
+    background: rgba(255, 248, 236, 0.95);
+    display: block;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(46, 109, 78, 0.15);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+    text-decoration: none;
+}
+.rsvp-prompt {
+    text-align: center;
+    font-size: 0.95rem;
+    margin: 10px auto 8px;
+    max-width: 92%;
+    line-height: 1.5;
+    color: #2f1f0f;
+    background: rgba(255, 248, 236, 0.95);
+    padding: 12px 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(46, 109, 78, 0.15);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+.envelop-label {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 18px;
+}
+.countdown {
+    text-align: center;
+    margin-top: 18px;
+}
+.countdown .label {
+    font-weight: bold;
+    color: #b30000;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #b30000;
+    letter-spacing: 0.1em;
+}
+.timer-labels {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 0.8rem;
+    color: #a67c52;
+    margin-top: 2px;
+}
+/* Invitation Page Styles */
+.invitation-page {
+    background: url('background.jpg') center top/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px 40px;
+}
+
+.invitation-navbar {
+    width: min(100%, 1400px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 24px;
+    margin-bottom: 22px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(139,111,71,0.16);
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    backdrop-filter: blur(14px);
+    position: sticky;
+    top: 14px;
+    z-index: 10;
+}
+
+.nav-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #2e6d4e;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    color: #6d4c2f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    background: rgba(46,109,78,0.14);
+    color: #2e6d4e;
+    transform: translateY(-1px);
+}
+
+.invitation-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: min(100%, 1400px);
+    align-items: stretch;
+}
+
+.invitation-card {
+    width: 100%;
+    max-width: 100%;
+    background: 
+        linear-gradient(135deg, rgb(250, 250, 250), rgba(46, 109, 78, 0.25)),
+        url('background7.jpg') center/cover;
+    backdrop-filter: blur(6px);
+    border: 3px solid #1f4d38;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.5);
+    padding: 38px 28px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeInUp 0.8s ease both;
+    will-change: transform, opacity;
+}
+
+.invitation-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 60px rgba(0,0,0,0.25);
+}
+
+.cards-grid .invitation-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.cards-grid .invitation-card:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.cards-grid .invitation-card:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.save-the-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2e6d4e;
+    margin-bottom: 18px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.entourage-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #2e6d4e;
+    margin-bottom: 18px;
+}
+
+.entourage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    text-align: left;
+}
+
+.entourage-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2e6d4e;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.role-list {
+    margin: 0;
+    padding-left: 1rem;
+    color: #4b3827;
+    line-height: 1.35;
+    font-size: 0.9rem;
+    min-width: 0;
+}
+
+.role-list li {
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.entourage-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.usherette-section {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.usherette-section .role-list {
+    display: block;
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding-left: 0;
+    line-height: 1.4;
+    min-width: 0;
+}
+
+.role-list li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.usherette-section .role-list li {
+    display: list-item;
+    list-style: none;
+    margin: 2px 0;
+    white-space: normal;
+    overflow: visible;
+    word-break: normal;
+}
+
+.invitation-names {
+    margin: 35px 0 25px 0;
+}
+
+.bride-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #6d4c2f;
+    margin-bottom: 10px;
+}
+
+.amp-large {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #2e6d4e;
+    margin: 12px 0;
+}
+
+.groom-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #6d4c2f;
+    margin-top: 10px;
+}
+
+.invitation-text {
+    margin: 18px 0;
+    font-size: 0.9rem;
+    color: #6d4c2f;
+    line-height: 1.4;
+}
+
+.invitation-text p {
+    margin: 4px 0;
+}
+
+.program-title,
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.9rem;
+    color: #2e6d4e;
+    margin: 18px 0 10px;
+}
+
+.program-list {
+    margin: 0;
+    padding-left: 1rem;
+    text-align: left;
+    color: #4b3827;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.program-list li {
+    margin: 6px 0;
+}
+
+.color-list {
+    margin: 0;
+    padding-left: 1rem;
+    text-align: left;
+    color: #4b3827;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.color-list li {
+    margin: 4px 0;
+}
+
+.wedding-ceremony {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #2e6d4e;
+    margin: 20px 0;
+}
+
+.event-details {
+    margin: 16px 0;
+    font-size: 0.95rem;
+    color: #6d4c2f;
+}
+
+.event-details p {
+    margin: 3px 0;
+}
+
+.event-date {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: #2e6d4e;
+}
+
+.event-location {
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: #6d4c2f;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.location-underline {
+    width: 90%;
+    max-width: 320px;
+    height: 1px;
+    margin: 8px auto 16px;
+    border: none;
+    background: #2e6d4e;
+    opacity: 0.75;
+}
+
+#reception .event-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+}
+
+#reception .event-location {
+    font-size: 0.72rem;
+    line-height: 1.15;
+    margin: 8px 0;
+}
+
+#reception .event-location p {
+    margin: 1px 0;
+}
+
+.event-location p {
+    margin: 4px 0;
+}
+
+.invitation-top-decoration,
+.invitation-bottom-decoration {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        #2e6d4e 20%, 
+        transparent 50%, 
+        #2e6d4e 80%, 
+        transparent 100%);
+    position: relative;
+}
+
+.invitation-left-ring,
+.invitation-right-ring {
+    position: absolute;
+    font-size: 35px;
+    bottom: 45px;
+    color: #a67c52;
+    opacity: 0.8;
+}
+
+.invitation-left-ring {
+    left: -55px;
+}
+
+.invitation-right-ring {
+    right: -55px;
+}
+
+.back-to-home {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.back-to-home a {
+    color: #6d4c2f;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    letter-spacing: 0.05em;
+}
+
+.back-to-home a:hover {
+    color: #2e6d4e;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 14px 20px;
+}
+
+.admin-panel {
+    width: 100%;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(46, 109, 78, 0.16);
+    border-radius: 26px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    padding: 32px;
+}
+
+.admin-panel h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+    color: #2e6d4e;
+}
+
+.admin-panel p {
+    margin: 0 0 16px;
+    color: #4b3827;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.admin-warning {
+    margin: 16px 0;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-weight: 600;
+}
+
+.admin-warning.success {
+    background: rgba(146, 210, 168, 0.16);
+    color: #2c6f35;
+}
+
+.admin-warning.error {
+    background: rgba(224, 123, 123, 0.15);
+    color: #a73d32;
+}
+
+.admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.admin-actions button {
+    background: #2e6d4e;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.admin-actions button:hover {
+    background: #1f4d38;
+    transform: translateY(-1px);
+}
+
+.admin-help {
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    color: #5f422d;
+}
+
+.admin-summary {
+    margin-bottom: 18px;
+    font-weight: 700;
+    color: #6d4c2f;
+}
+
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 860px;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid rgba(139,111,71,0.18);
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+    color: #4b3827;
+}
+
+.admin-table th {
+    background: rgba(216, 194, 150, 0.18);
+    color: #6d4c2f;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-table tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.85);
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background: rgba(245,240,232,0.95);
+}
+
+@media (max-width: 1024px) {
+    .admin-panel {
+        padding: 24px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 760px) {
+    .admin-actions {
+        flex-direction: column;
+    }
+
+    .admin-table {
+        min-width: 0;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 12px 12px;
+        font-size: 0.92rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .admin-panel {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .admin-panel h2 {
+        font-size: 2rem;
+    }
+
+    .admin-actions button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .invitation-navbar,
+    .back-to-home,
+    .admin-actions,
+    .admin-help,
+    .admin-warning,
+    .nav-links,
+    .nav-brand {
+        display: none !important;
+    }
+
+    .admin-panel {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        border: 1px solid #999;
+        padding: 10px;
+    }
+
+    .admin-table {
+        min-width: 0;
+    }
+}
+
+.rsvp-section {
+    width: 100%;
+    max-width: 620px;
+    margin: 28px auto 0;
+    padding: 0 10px;
+}
+
+.rsvp-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(46, 109, 78, 0.16);
+    border-radius: 26px;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+    padding: 26px;
+}
+
+.rsvp-card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: #2e6d4e;
+}
+
+.rsvp-card p {
+    margin: 0 0 28px;
+    color: #5f422d;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.rsvp-form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: #5f422d;
+}
+
+.form-field span {
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(139,111,71,0.25);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.94);
+    color: #4b3827;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(75, 56, 39, 0.65);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #2e6d4e;
+    box-shadow: 0 0 0 4px rgba(46, 109, 78, 0.12);
+}
+
+.radio-field .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #4b3827;
+}
+
+.radio-group input {
+    accent-color: #2e6d4e;
+}
+
+.rsvp-button {
+    width: fit-content;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 999px;
+    background: #2e6d4e;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.rsvp-button:hover {
+    background: #1f4d38;
+    transform: translateY(-1px);
+}
+
+.rsvp-message {
+    min-height: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 6px;
+    color: #4b3827;
+}
+
+.rsvp-message.success {
+    color: #2c6f35;
+}
+
+.rsvp-message.error {
+    color: #a73d32;
+}
+
+@media (max-width: 860px) {
+    .rsvp-card {
+        padding: 22px;
+    }
+
+    .rsvp-card h2 {
+        font-size: 2rem;
+    }
+
+    .rsvp-card p {
+        margin-bottom: 22px;
+        font-size: 0.95rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .rsvp-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .rsvp-card {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .rsvp-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-field {
+        gap: 8px;
+        font-size: 0.92rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+        padding: 10px 12px;
+        border-radius: 14px;
+    }
+
+    .rsvp-button {
+        padding: 12px 18px;
+    }
+}
+
+/* Countdown Timer Styles */
+.invitation-countdown {
+    margin: 30px 0 20px 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.countdown-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a67c52;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.invitation-timer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6d4c2f;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.invitation-timer span {
+    min-width: 40px;
+    text-align: center;
+    color: #8B4513;
+}
+
+.invitation-timer-labels {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #a67c52;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.invitation-timer-labels span {
+    min-width: 40px;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .invitation-card {
+        padding: 48px 30px;
+    }
+}
+
+@media (max-width: 720px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .invitation-card {
+        padding: 36px 22px;
+        animation-duration: 0.7s;
+    }
+}
+
+@media (max-width: 520px) {
+    .invitation-card {
+        padding: 30px 16px;
+    }
+
+    .entourage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .role-title {
+        font-size: 0.95rem;
+    }
+
+    .role-list {
+        font-size: 0.82rem;
+        padding-left: 0.9rem;
+    }
+
+    .role-list li {
+        margin: 2px 0;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .usherette-section {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 10px 2px;
+    }
+
+    .invitation-page {
+        padding: 12px;
+    }
+    .invitation-page .envelope-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .invitation-page .bride-groom {
+        width: 80px;
+        height: 140px;
+    }
+    .invitation-page .envelope {
+        width: 220px;
+        height: 120px;
+    }
+    .invitation-page .seal {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .invitation-card {
+        padding: 40px 25px;
+        border: 2px solid #8B6F47;
+    }
+    
+    .invitation-left-ring,
+    .invitation-right-ring {
+        display: none;
+    }
+    
+    .bride-name,
+    .groom-name {
+        font-size: 2rem;
+    }
+    
+    .wedding-ceremony {
+        font-size: 2.2rem;
+    }
+    
+    .save-the-date {
+        font-size: 0.95rem;
+    }
+    
+    .invitation-countdown {
+        margin: 20px 0 15px 0;
+        padding: 15px 0;
+    }
+    
+    .countdown-label {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+    }
+    
+    .invitation-timer {
+        font-size: 1.4rem;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .invitation-timer span {
+        min-width: 32px;
+    }
+    
+    .invitation-timer-labels {
+        gap: 10px;
+        font-size: 0.65rem;
+    }
+    
+    .invitation-timer-labels span {
+        min-width: 32px;
+    }
+}
+

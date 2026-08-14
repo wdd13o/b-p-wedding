@@ -1,0 +1,6 @@
+services:
+  - type: static_site
+    name: b-p-wedding
+    env: static
+    branch: main
+    publishPath: /

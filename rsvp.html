@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Bundu & Princess</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="invitation-page">
+    <nav class="invitation-navbar">
+        <div class="nav-brand">Bundu & Princess</div>
+        <div class="nav-links">
+            <a href="souvenir.html">Souvenir</a>
+            <a href="invitation.html">Invitation</a>
+            <a href="rsvp.html">RSVP</a>
+        </div>
+    </nav>
+
+    <main class="invitation-container">
+        <section class="rsvp-section">
+            <div class="rsvp-card">
+                <h2>RSVP</h2>
+                <p>Please let us know if you will join us on our special day.</p>
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-row">
+                        <label class="form-field">
+                            <span>Full Name</span>
+                            <input type="text" name="name" placeholder="Your full name" required>
+                        </label>
+                        <label class="form-field">
+                            <span>Phone No:</span>
+                            <input type="tel" name="phone" placeholder="e.g. +1 234 567 890" required>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-field radio-field">
+                            <span>Will you attend?</span>
+                            <div class="radio-group">
+                                <label><input type="radio" name="attendance" value="yes" required> Yes</label>
+                                <label><input type="radio" name="attendance" value="no"> No</label>
+                            </div>
+                        </label>
+                        <label class="form-field">
+                            <span>Guests</span>
+                            <input type="number" name="guests" min="0" max="10" placeholder="0">
+                        </label>
+                    </div>
+                    <label class="form-field">
+                        <span>Party Affiliation</span>
+                        <select name="partyRole" required>
+                            <option value="" disabled selected hidden>Select one</option>
+                            <optgroup label="Family of Bundu">
+                                <option value="Bundu - Immediate Family member">Immediate Family member</option>
+                                <option value="Bundu - Friend">Friend</option>
+                                <option value="Bundu - Collegue">Collegue</option>
+                                <option value="Bundu - Church Member">Church Member</option>
+                                <option value="Bundu - Work Mate">Work Mate</option>
+                            </optgroup>
+                            <optgroup label="Family of Princess">
+                                <option value="Princess - Immediate Family member">Immediate Family member</option>
+                                <option value="Princess - Friend">Friend</option>
+                                <option value="Princess - Collegue">Collegue</option>
+                                <option value="Princess - Church Member">Church Member</option>
+                                <option value="Princess - Work Mate">Work Mate</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span>Song Request</span>
+                        <input type="text" name="song" placeholder="A song you'd love to hear">
+                    </label>
+                    <label class="form-field">
+                        <span>Talent / Performance</span>
+                        <select name="talent" required>
+                            <option value="" disabled selected hidden>Select one</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </label>
+                    <button type="submit" class="rsvp-button">Send RSVP</button>
+                    <div id="rsvp-message" class="rsvp-message" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- back link removed per request -->
+
+    <script src="script.js"></script>
+</body>
+</html>
