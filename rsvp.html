@@ -36,9 +36,15 @@
                     <div class="form-row">
                         <label class="form-field radio-field">
                             <span>Will you attend?</span>
-                            <div class="radio-group">
-                                <label><input type="radio" name="attendance" value="yes" required> Yes</label>
-                                <label><input type="radio" name="attendance" value="no"> No</label>
+                            <div class="radio-group" role="radiogroup" aria-label="Attendance response">
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="yes" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="no">
+                                    <span>No</span>
+                                </label>
                             </div>
                         </label>
                         <label class="form-field">
