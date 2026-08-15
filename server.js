@@ -31,6 +31,24 @@ function writeEntries(entries) {
   fs.writeFileSync(DATA_PATH, JSON.stringify(entries, null, 2), 'utf8');
 }
 
+let pendingWrite = Promise.resolve();
+
+function appendEntry(entry) {
+  pendingWrite = pendingWrite
+    .then(() => {
+      const entries = readEntries();
+      entries.push(entry);
+      writeEntries(entries);
+      return entry;
+    })
+    .catch((error) => {
+      console.error('Failed to append RSVP entry:', error);
+      throw error;
+    });
+
+  return pendingWrite;
+}
+
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=utf-8',
@@ -102,7 +120,7 @@ const server = http.createServer((req, res) => {
         body += chunk;
       });
 
-      req.on('end', () => {
+      req.on('end', async () => {
         try {
           const payload = body ? JSON.parse(body) : {};
           const entry = {
@@ -116,9 +134,7 @@ const server = http.createServer((req, res) => {
             submittedAt: payload.submittedAt || new Date().toISOString(),
           };
 
-          const entries = readEntries();
-          entries.push(entry);
-          writeEntries(entries);
+          await appendEntry(entry);
           sendJson(res, 200, entry);
         } catch (error) {
           console.error('Failed to save RSVP payload:', error);
