@@ -4,6 +4,5 @@ services:
     env: node
     branch: main
     runtime: node
-    rootDir: souvenir-site
     startCommand: node server.js
     plan: free
