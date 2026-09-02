@@ -864,21 +864,41 @@ header .date {
 }
 
 .radio-field .radio-group {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
     gap: 12px;
 }
 
-.radio-group label {
+.radio-option {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    font-weight: 500;
+    min-height: 48px;
+    padding: 10px 16px;
+    border: 1px solid rgba(139,111,71,0.28);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
     color: #4b3827;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
 }
 
-.radio-group input {
+.radio-option:hover {
+    border-color: rgba(46, 109, 78, 0.75);
+    box-shadow: 0 0 0 3px rgba(46, 109, 78, 0.08);
+}
+
+.radio-option input {
     accent-color: #2e6d4e;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.radio-option span {
+    user-select: none;
 }
 
 .rsvp-button {

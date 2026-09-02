@@ -1,0 +1,22 @@
+[
+  {
+    "name": "A",
+    "phone": "1",
+    "attendance": "attending",
+    "guests": "0",
+    "partyRole": "Guest",
+    "song": "",
+    "talent": "",
+    "submittedAt": "2026-08-15T17:20:17.939Z"
+  },
+  {
+    "name": "B",
+    "phone": "2",
+    "attendance": "attending",
+    "guests": "0",
+    "partyRole": "Guest",
+    "song": "",
+    "talent": "",
+    "submittedAt": "2026-08-15T17:20:17.966Z"
+  }
+]

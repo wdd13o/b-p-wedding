@@ -74,3 +74,65 @@ test('RSVP API stores and returns entries from a shared backend', async () => {
     child.kill('SIGTERM');
   }
 });
+
+test('RSVP API preserves earlier entries when multiple people submit at once', async () => {
+  const concurrentDataFile = path.join(appDir, 'data', 'concurrent-rsvps.json');
+  fs.mkdirSync(path.dirname(concurrentDataFile), { recursive: true });
+  fs.writeFileSync(concurrentDataFile, '[]', 'utf8');
+
+  const child = spawn(process.execPath, ['server.js'], {
+    cwd: appDir,
+    env: {
+      ...process.env,
+      PORT: '4051',
+      RSVP_DATA_PATH: concurrentDataFile,
+    },
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+
+  try {
+    await waitForServer(4051);
+
+    const requests = [
+      fetch('http://127.0.0.1:4051/api/rsvps', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Alice',
+          phone: '111',
+          attendance: 'attending',
+          guests: '1',
+          partyRole: 'Bride Family',
+          song: '',
+          talent: '',
+          submittedAt: new Date('2026-01-02T00:00:00Z').toISOString(),
+        }),
+      }),
+      fetch('http://127.0.0.1:4051/api/rsvps', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Bob',
+          phone: '222',
+          attendance: 'attending',
+          guests: '2',
+          partyRole: 'Groom Family',
+          song: '',
+          talent: '',
+          submittedAt: new Date('2026-01-03T00:00:00Z').toISOString(),
+        }),
+      }),
+    ];
+
+    const responses = await Promise.all(requests);
+    responses.forEach((response) => assert.equal(response.status, 200));
+
+    const getResponse = await fetch('http://127.0.0.1:4051/api/rsvps');
+    assert.equal(getResponse.status, 200);
+    const entries = await getResponse.json();
+    assert.equal(entries.length, 2);
+    assert.deepEqual(entries.map((entry) => entry.name).sort(), ['Alice', 'Bob']);
+  } finally {
+    child.kill('SIGTERM');
+  }
+});
