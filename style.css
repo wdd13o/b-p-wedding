@@ -169,14 +169,14 @@ header .date {
 }
 .countdown .label {
     font-weight: bold;
-    color: #b30000;
+    color: #2d6e3d;
     font-size: 1.1rem;
     margin-bottom: 6px;
 }
 #timer {
     font-size: 2rem;
     font-weight: bold;
-    color: #b30000;
+    color: #2d6e3d;
     letter-spacing: 0.1em;
 }
 .timer-labels {

@@ -12,7 +12,7 @@ function updateCountdown() {
     }
 
     // Use numeric Date constructor to avoid parsing differences across browsers
-    const eventDate = new Date(2026, 8, 5, 0, 0, 0); // September 5, 2026 (month is 0-based)
+    const eventDate = new Date(2026, 8, 25, 13, 30, 0); // September 25, 2026 at 1:30 PM (month is 0-based)
     if (isNaN(eventDate.getTime())) return;
     const now = new Date();
     let diff = eventDate - now;
